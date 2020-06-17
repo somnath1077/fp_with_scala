@@ -26,11 +26,11 @@ object List {
 
   def fill[A](a: A, n: Int): List[A] = {
     @tailrec
-    def build(lst: List[A], a: A, n: Int): List[A] = {
+    def build(lst: List[A], n: Int): List[A] = {
       if (n == 0) lst
-      else build(Cons(a, lst), a, n - 1)
+      else build(Cons(a, lst), n - 1)
     }
-    build(Nil, a, n)
+    build(Nil, n)
   }
 
   def apply[A](as: A*): List[A] =
