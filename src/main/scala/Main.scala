@@ -17,5 +17,6 @@ object Main {
     println(x)
 
     println(List.fill("hello", 5))
+    println(List.head(Cons(1, Nil)))
   }
 }

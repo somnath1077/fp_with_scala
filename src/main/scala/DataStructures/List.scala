@@ -36,4 +36,8 @@ object List {
   def apply[A](as: A*): List[A] =
     if (as.isEmpty) Nil
     else Cons(as.head, apply(as.tail: _*))
+
+  def head[A](lst: List[A]): A = lst match {
+    case Cons(x, _) => x
+  }
 }
