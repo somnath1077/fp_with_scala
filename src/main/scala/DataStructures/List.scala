@@ -30,6 +30,7 @@ object List {
       if (n <= 0) lst
       else build(Cons(a, lst), n - 1)
     }
+
     build(Nil, n)
   }
 
@@ -39,5 +40,10 @@ object List {
 
   def head[A](lst: List[A]): A = lst match {
     case Cons(x, _) => x
+  }
+
+  def tail[A](lst: List[A]): List[A] = lst match {
+    case Nil => Nil
+    case Cons(_, xs) => xs
   }
 }
