@@ -15,5 +15,7 @@ object Main {
       case _ => 101
     }
     println(x)
+
+    println(List.fill("hello", 5))
   }
 }

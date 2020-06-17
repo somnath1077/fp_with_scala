@@ -1,5 +1,7 @@
 package DataStructures
 
+import scala.annotation.tailrec
+
 abstract class List[+A]
 
 case object Nil extends List[Nothing] {
@@ -20,6 +22,15 @@ object List {
     case Nil => 1
     case Cons(0.0, _) => 0.0
     case Cons(x, xs) => x * product(xs)
+  }
+
+  def fill[A](a: A, n: Int): List[A] = {
+    @tailrec
+    def build(lst: List[A], a: A, n: Int): List[A] = {
+      if (n == 0) lst
+      else build(Cons(a, lst), a, n - 1)
+    }
+    build(Nil, a, n)
   }
 
   def apply[A](as: A*): List[A] =
