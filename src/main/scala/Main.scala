@@ -18,8 +18,8 @@ object Main {
 
     println(List.fill("hello", 5))
     println(List.head(Cons(1, Nil)))
-    println(List.head(Nil))
-    println(List.tail(Nil))
+    // println(List.head(Nil))
+    // println(List.tail(Nil))
     println(List.tail(Cons(1, Cons(2, Nil))))
   }
 }

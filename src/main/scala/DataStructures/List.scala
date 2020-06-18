@@ -38,13 +38,13 @@ object List {
     if (as.isEmpty) Nil
     else Cons(as.head, apply(as.tail: _*))
 
-  def head[A](lst: List[A]): Option[A] = lst match {
-    case Nil => None
-    case Cons(x, _) => Some(x)
+  def head[A](lst: List[A]): A = lst match {
+    case Nil => sys.error("Head of an empty list")
+    case Cons(x, _) => x
   }
 
   def tail[A](lst: List[A]): List[A] = lst match {
-    case Nil => Nil
+    case Nil => sys.error("Tail of an empty list")
     case Cons(_, xs) => xs
   }
 }
