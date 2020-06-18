@@ -47,4 +47,13 @@ object List {
     case Nil => sys.error("Tail of an empty list")
     case Cons(_, xs) => xs
   }
+
+  @tailrec
+  def drop[A](l: List[A], n: Int): List[A] =
+    if (n <= 0) l
+    else
+      l match {
+        case Nil => Nil
+        case Cons(_, t) => drop(t, n - 1)
+      }
 }

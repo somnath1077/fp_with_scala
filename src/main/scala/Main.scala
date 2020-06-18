@@ -21,5 +21,7 @@ object Main {
     // println(List.head(Nil))
     // println(List.tail(Nil))
     println(List.tail(Cons(1, Cons(2, Nil))))
+    val z = List(1, 2)
+    println(List.drop(z, 3))
   }
 }
